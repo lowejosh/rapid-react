@@ -1,14 +1,17 @@
 import React from "react";
-import { ThemeProvider } from "@material-ui/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { Box } from "@material-ui/core";
-import { Content } from "./Content/Content";
+import { Content } from "./Content";
 import { Sidebar } from "./Sidebar/Sidebar";
+import { Box, AppBar } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import { mainTheme } from "../../themes/mainTheme";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
-const App: React.FC<{}> = () => {
+export const App: React.FC<{}> = () => {
+  console.log(mainTheme);
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={{ mainTheme }}>
       <CssBaseline />
+      <AppBar />
       <Box display="flex">
         <Sidebar />
         <Content />
@@ -16,5 +19,3 @@ const App: React.FC<{}> = () => {
     </ThemeProvider>
   );
 };
-
-export default App;
